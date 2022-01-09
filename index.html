@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Stack Overflow - Where Developers Learn, Share, & Build Careers</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196">
+</head>
+<body>
+    <div class="org-bar">
+        <header class="flexHeader">
+            <div class="logo"><img src="logo-stackoverflow.svg" alt="logo" width="145"></div>
+            <div class="products">Products</div>
+            <div id="searchBar">
+                <svg class="inside_icon"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 10-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 112 7a5 5 0 0110 0Z"></path></svg>
+                <input type="text" placeholder="Search..."></input>
+            </div>
+            <!-- <div>
+                <svg class="outside_icon"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 10-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 112 7a5 5 0 0110 0Z"></path></svg>
+            </div> -->
+            <div>
+                <ul class="flex-list list-style header-icons">
+                    <li><a href=""><img src="account_symbol.png" alt="account picture"></a><span>1</span></li>
+                    <li><a href=""><svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M4.63 1h10.56a2 2 0 0 1 1.94 1.35L20 10.79V15a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-4.21l2.78-8.44c.25-.8 1-1.36 1.85-1.35Zm8.28 12 2-2h2.95l-2.44-7.32a1 1 0 0 0-.95-.68H5.35a1 1 0 0 0-.95.68L1.96 11h2.95l2 2h6Z"></path></svg></a></li>
+                    <li><a href=""><svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3ZM3 7c-.5 0-1-.5-1-1V4h1v3Zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1ZM16 6c0 .5-.5 1-1 1V4h1v2Z"></path></svg></a></li>
+                    <li><a href=""><svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8Zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23ZM11.77 8c-.59.66-1.78 1.09-2.05 1.97a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.06-1.35.66-2.2 1.83-2.88.39-.29.7-.75.7-1.24.01-1.24-1.64-1.82-2.35-.72-.21.33-.18.73-.18 1.1H5.75c0-1.97 1.03-3.26 3.03-3.26 1.75 0 3.47.87 3.47 2.83 0 .57-.2 1.05-.48 1.44Z"></path></svg></a></li>
+                    <li><a href=""><svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2ZM1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2Zm16-7H1v4h16V6Z"></path></svg></a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div class="left-sidebar space-down">
+                <ul class="list-style">
+                    <li id="home">Home</li>
+                    <ul class="list-style">
+                        <li class="no-icon-header">PUBLIC</li>
+                        <li class="left-item icon-header">
+                            <a href="">
+                                <svg aria-hidden="true" class="svg-icon" width="18" height="18" viewBox="0 0 18 18">
+                                    <path d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8ZM8 15.32a6.46 6.46 0 01-4.3-2.74 6.46 6.46 0 01-.93-5.01L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52Zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.45 6.45 0 013.83 4.51 6.45 6.45 0 01-1.51 5.73v.01Z"></path>
+                                </svg>Questions
+                            </a>
+                        </li>
+                        <li class="left-item right-side"><a href="">Tags</a></li>
+                        <li class="left-item right-side"><a href="">Users</a></li>
+                        <li class="no-icon-header info-tag flex-split"><span>COLLECTIVES</span><svg aria-hidden="true" class="svg-icon iconInfoSm" width="14" height="14" viewBox="0 0 14 14"><path d="M7 1a6 6 0 1 1 0 12A6 6 0 0 1 7 1Zm1 10V6H6v5h2Zm0-6V3H6v2h2Z"></path></svg></li>
+                        <li class="left-item icon-header"><a href=""><svg aria-hidden="true" class="svg-icon svg-explore" width="18" height="18" viewBox="0 0 18 18"><path d="M9.86.89a1.14 1.14 0 0 0-1.72 0l-.5.58c-.3.35-.79.48-1.23.33l-.72-.25a1.14 1.14 0 0 0-1.49.85l-.14.76c-.1.45-.45.8-.9.9l-.76.14c-.67.14-1.08.83-.85 1.49l.25.72c.15.44.02.92-.33 1.23l-.58.5a1.14 1.14 0 0 0 0 1.72l.58.5c.35.3.48.79.33 1.23l-.25.72c-.23.66.18 1.35.85 1.49l.76.14c.45.1.8.45.9.9l.14.76c.14.67.83 1.08 1.49.85l.72-.25c.44-.15.92-.02 1.23.33l.5.58c.46.52 1.26.52 1.72 0l.5-.58c.3-.35.79-.48 1.23-.33l.72.25c.66.23 1.35-.18 1.49-.85l.14-.76c.1-.45.45-.8.9-.9l.76-.14c.67-.14 1.08-.83.85-1.49l-.25-.72c-.15-.44-.02-.92.33-1.23l.58-.5c.52-.46.52-1.26 0-1.72l-.58-.5c-.35-.3-.48-.79-.33-1.23l.25-.72a1.14 1.14 0 0 0-.85-1.49l-.76-.14c-.45-.1-.8-.45-.9-.9l-.14-.76a1.14 1.14 0 0 0-1.49-.85l-.72.25c-.44.15-.92.02-1.23-.33l-.5-.58Zm-.49 2.67L10.6 6.6c.05.15.19.24.34.25l3.26.22c.36.03.5.48.23.71l-2.5 2.1a.4.4 0 0 0-.14.4l.8 3.16a.4.4 0 0 1-.6.44L9.2 12.13a.4.4 0 0 0-.42 0l-2.77 1.74a.4.4 0 0 1-.6-.44l.8-3.16a.4.4 0 0 0-.13-.4l-2.5-2.1a.4.4 0 0 1 .22-.7l3.26-.23a.4.4 0 0 0 .34-.25l1.22-3.03a.4.4 0 0 1 .74 0Z"></path></svg>Explore Collectives</a></li>
+                        <li class="left-item no-icon-header">FIND A JOB</li>
+                        <li class="left-item right-side"><a href="">Jobs</a></li>
+                        <li class="left-item right-side"><a href="">Companies</a></li>
+                        <li class="no-icon-header info-tag flex-split"><span>TEAMS</span><svg aria-hidden="true" class="svg-icon iconInfoSm" width="14" height="14" viewBox="0 0 14 14"><path d="M7 1a6 6 0 1 1 0 12A6 6 0 0 1 7 1Zm1 10V6H6v5h2Zm0-6V3H6v2h2Z"></path></svg></li>
+                        <li class="left-item icon-header">
+                            <a href="">
+                                <div class="flex-option">
+                                    <div class="org-bk">
+                                        <svg aria-hidden="true" class="iconBriefcaseSm svg-brief" width="14" height="14" viewBox="0 0 14 14">
+                                            <path d="M4 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h.5c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5h-7A1.5 1.5 0 0 1 2 10.5v-5C2 4.67 2.67 4 3.5 4H4V3Zm5 1V3H5v1h4Z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="lock">
+                                        <svg aria-hidden="true" class="iconShieldXSm" width="9" height="10" viewBox="0 0 9 10">
+                                            <path d="M0 1.84 4.5 0 9 1.84v3.17C9 7.53 6.3 10 4.5 10 2.7 10 0 7.53 0 5.01V1.84Z" fill="var(--white)"></path>
+                                            <path d="M1 2.5 4.5 1 8 2.5v2.51C8 7.34 5.34 9 4.5 9 3.65 9 1 7.34 1 5.01V2.5Zm2.98 3.02L3.2 7h2.6l-.78-1.48a.4.4 0 0 1 .15-.38c.34-.24.73-.7.73-1.14 0-.71-.5-1.23-1.41-1.23-.92 0-1.39.52-1.39 1.23 0 .44.4.9.73 1.14.12.08.18.23.15.38Z" fill="white"></path>
+                                            <path d="M1 2.5 4.5 1 8 2.5v2.51C8 7.34 5.34 9 4.5 9 3.65 9 1 7.34 1 5.01V2.5Zm2.98 3.02L3.2 7h2.6l-.78-1.48a.4.4 0 0 1 .15-.38c.34-.24.73-.7.73-1.14 0-.71-.5-1.23-1.41-1.23-.92 0-1.39.52-1.39 1.23 0 .44.4.9.73 1.14.12.08.18.23.15.38Z" fill="rgb(106, 115, 124)"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="svg-text">Create free Team</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+        </div>
+        <div class="main">
+            <div class="mainbar space-down">
+                <div class="inner-content">
+                    <div class="container2">
+                        <h1>Top Questions</h1>
+                        <div>
+                            <a class="btn" href="">Ask Question</a>
+                        </div>
+                    </div>
+                    <div class="container2 spacing">
+                        <div></div>
+                        <div class="btn-group">
+                            <div id="btn1" href="">Interesting</div>
+                            <div id="btn2" href=""><span>242</span> Bountied</div>
+                            <div id="btn3" href="">Hot</div>
+                            <div id="btn4" href="">Week</div>
+                            <div id="btn5" href="">Month</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>2</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Get my own location programmatically from google</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">google-app-script</div>
+                                <div class="tag">gps</div>
+                                <div class="tag">location</div>
+                            </div>
+                            <div class="author"><span class="time">asked 32 secs ago </span><span class="author-name">phatmance</span> 4,077</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>10</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Model View Controller Service Connection (ASP.NET Core)</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">C#</div>
+                                <div class="tag">asp.net-core-mvc</div>
+                            </div>
+                            <div class="author"><span class="time">modified 37 secs ago </span><span class="author-name">Progman</span> 14.1k </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>6</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">fls-na.amazon.com iframe automation via chrome extension to set creditcard data</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">javascript</div>
+                                <div class="tag">google-chrome</div>
+                                <div class="tag">iframe</div>
+                                <div class="tag">google-chrome-extension</div>
+                                <div class="tag">amazon</div>
+                            </div>
+                            <div class="author"><span class="time">modified 38 secs ago </span><span class="author-name">user3829398</span> 1 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>3</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">TypeError 'int' object is not callable</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">python</div>
+                            </div>
+                            <div class="author"><span class="time">asked 52 secs ago </span><span class="author-name">gianniverspace777</span> 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div id="answered" class="stat">
+                            <div>1</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>10</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">MySQL: Avoid having to set a NULL value on an UNIQUE field before updating it</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">mysql</div>
+                                <div class="tag">sql</div>
+                                <div class="tag">database</div>
+                            </div>
+                            <div class="author"><span class="time">answered 54 secs ago </span><span class="author-name">forpas</span> 135kk </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>5</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Django get queryset through Many To Many extra field</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">django</div>
+                                <div class="tag">many-to-many</div>
+                            </div>
+                            <div class="author"><span class="time">asked 1 min ago </span><span class="author-name">oscurodrago</span> 654 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>2</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Get my own location programmatically from google</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">google-app-script</div>
+                                <div class="tag">gps</div>
+                                <div class="tag">location</div>
+                            </div>
+                            <div class="author"><span class="time">asked 32 secs ago </span><span class="author-name">phatmance</span> 4,077</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>10</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Model View Controller Service Connection (ASP.NET Core)</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">C#</div>
+                                <div class="tag">asp.net-core-mvc</div>
+                            </div>
+                            <div class="author"><span class="time">modified 37 secs ago </span><span class="author-name">Progman</span> 14.1k </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>6</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">fls-na.amazon.com iframe automation via chrome extension to set creditcard data</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">javascript</div>
+                                <div class="tag">google-chrome</div>
+                                <div class="tag">iframe</div>
+                                <div class="tag">google-chrome-extension</div>
+                                <div class="tag">amazon</div>
+                            </div>
+                            <div class="author"><span class="time">modified 38 secs ago </span><span class="author-name">user3829398</span> 1 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>3</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">TypeError 'int' object is not callable</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">python</div>
+                            </div>
+                            <div class="author"><span class="time">asked 52 secs ago </span><span class="author-name">gianniverspace777</span> 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div id="answered" class="stat">
+                            <div>1</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>10</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">MySQL: Avoid having to set a NULL value on an UNIQUE field before updating it</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">mysql</div>
+                                <div class="tag">sql</div>
+                                <div class="tag">database</div>
+                            </div>
+                            <div class="author"><span class="time">answered 54 secs ago </span><span class="author-name">forpas</span> 135kk </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>5</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Django get queryset through Many To Many extra field</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">django</div>
+                                <div class="tag">many-to-many</div>
+                            </div>
+                            <div class="author"><span class="time">asked 1 min ago </span><span class="author-name">oscurodrago</span> 654 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>2</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Get my own location programmatically from google</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">google-app-script</div>
+                                <div class="tag">gps</div>
+                                <div class="tag">location</div>
+                            </div>
+                            <div class="author"><span class="time">asked 32 secs ago </span><span class="author-name">phatmance</span> 4,077</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>10</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Model View Controller Service Connection (ASP.NET Core)</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">C#</div>
+                                <div class="tag">asp.net-core-mvc</div>
+                            </div>
+                            <div class="author"><span class="time">modified 37 secs ago </span><span class="author-name">Progman</span> 14.1k </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>6</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">fls-na.amazon.com iframe automation via chrome extension to set creditcard data</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">javascript</div>
+                                <div class="tag">google-chrome</div>
+                                <div class="tag">iframe</div>
+                                <div class="tag">google-chrome-extension</div>
+                                <div class="tag">amazon</div>
+                            </div>
+                            <div class="author"><span class="time">modified 38 secs ago </span><span class="author-name">user3829398</span> 1 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>3</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">TypeError 'int' object is not callable</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">python</div>
+                            </div>
+                            <div class="author"><span class="time">asked 52 secs ago </span><span class="author-name">gianniverspace777</span> 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div id="answered" class="stat">
+                            <div>1</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>10</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">MySQL: Avoid having to set a NULL value on an UNIQUE field before updating it</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">mysql</div>
+                                <div class="tag">sql</div>
+                                <div class="tag">database</div>
+                            </div>
+                            <div class="author"><span class="time">answered 54 secs ago </span><span class="author-name">forpas</span> 135kk </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="post">
+                    <div class="stats">
+                        <div class="stat">
+                            <div>0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="stat">
+                            <div>0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="stat">
+                            <div>5</div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                    <div class="postInfo">
+                        <div class="postMessage">Django get queryset through Many To Many extra field</div>
+                        <div class="details">
+                            <div class="tags">
+                                <div class="tag">django</div>
+                                <div class="tag">many-to-many</div>
+                            </div>
+                            <div class="author"><span class="time">asked 1 min ago </span><span class="author-name">oscurodrago</span> 654 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="end-box">Looking for more? Browse the <a class="blue-link">complete list of questions</a>, or <a class="blue-link">tags</a>. Help us answer <a class="blue-link">unanswered questions</a>.</div>
+            </div>
+            <div class="right-sidebar space-down">
+                <div class="blog-box">
+                    <div class="right-header">The Overflow Blog</div>
+                    <div class="right-info">
+                        <p>Podcast 403: Professional ethics and phantom braking</p><br>
+                        <p>The Bash is over, but the season lives a little longer</p> 
+                    </div>
+                    <div class="right-header">Featured on Meta </div>
+                    <div class="right-info">
+                        <p>Providing a JavaScript API for userscripts</p><br>
+                        <p>Congratulations to the 59 sites that just left Beta</p> 
+                    </div>
+                    <div class="right-header">Hot Meta Posts </div>
+                    <div class="right-info">
+                        <div class="right-flex"><span>16</span><div id="right-text">to do if a poster adds a username in the title for directing their...</div></div><br>
+                        <div class="right-flex"><span>51</span><div id="right-text">What does Stack Overflow Jobs' "Easy Apply" look like to a recruiter?</div></div><br>
+                        <div class="right-flex"><span>5</span><div id="right-text">An accepted answer was deleted yet the user was not deleted</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-flex">
+            <div id="footer-img"><svg aria-hidden="true" class="native svg-icon iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><path d="M26 33v-9h4v13H0V24h4v9h22Z" fill="#BCBBBB"></path><path d="m21.5 0-2.7 2 9.9 13.3 2.7-2L21.5 0ZM26 18.4 13.3 7.8l2.1-2.5 12.7 10.6-2.1 2.5ZM9.1 15.2l15 7 1.4-3-15-7-1.4 3Zm14 10.79.68-2.95-16.1-3.35L7 23l16.1 2.99ZM23 30H7v-3h16v3Z" fill="#F48024"></path></svg></div>
+            <div>
+                <ul>
+                    <li><a href=""><span>STACK OVERFLOW</span></a></li>
+                    <li><a href="">Questions</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">Developers Jobs Directory</a></li>
+                    <li><a href="">Salary Calculator</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Mobile</a></li>
+                    <li><a href="">Disable Responsiveness</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href=""><span>PRODUCTS</span></a></li>
+                    <li><a href="">Teams</a></li>
+                    <li><a href="">Talent</a></li>
+                    <li><a href="">Advertising</a></li>
+                    <li><a href="">Enterprise</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href=""><span>COMPANY</span></a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Press</a></li>
+                    <li><a href="">Work Here</a></li>
+                    <li><a href="">Legal</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Cookie Settings</a></li>
+                    <li><a href="">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href=""><span>STACK EXCHANGE NETWORK</span></a></li>
+                    <li><a href="">Technology</a></li>
+                    <li><a href="">Culture & recreation</a></li>
+                    <li><a href="">Life & arts</a></li>
+                    <li><a href="">Science</a></li>
+                    <li><a href="">Professional</a></li>
+                    <li><a href="">Business</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href="">Api</a></li>
+                    <li><a href="">Data</a></li>
+                </ul>
+            </div>
+            <div class="rights">
+                <ul id="social-links">
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">LinkedIn</a></li>
+                    <li><a href="">Instagram</a></li>
+                </ul>
+                <p>site design / logo © 2022 Stack Exchange Inc; user contributions licensed under cc by-sa. rev 2022.1.7.41110</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
